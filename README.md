@@ -12,7 +12,7 @@ Bienvenido a la landing page de **Fidelisk**, una página que utiliza **Laravel*
 A continuación, puedes ver los logos de las tecnologías utilizadas en este proyecto:
 
 
-<div style="display: flex; justify-content: space-between; align-items: center">
+<div>
   <img src="https://logospng.org/download/laravel/logo-laravel-icon-1024.png" width="135" height="135" alt="Laravel Logo">
   <img src="https://i0.wp.com/blog.desdelinux.net/wp-content/uploads/2015/04/Asterisk_Logo.svg_.png" width="180" height="135" alt="Asterisk Logo">
 </div>
