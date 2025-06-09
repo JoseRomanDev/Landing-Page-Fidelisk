@@ -257,7 +257,83 @@
             font-weight: 600;
         }
 
-        /* Animaciones específicas del logo (removed as they are not applicable to the new SVG) */
+        /* Efectos de carga */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 1024px) {
+            .logo-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .main-container {
+                gap: 25px;
+            }
+
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .tech-badges {
+                gap: 8px;
+            }
+
+            .variant-svg {
+                max-width: clamp(120px, 25vw, 160px);
+                max-height: clamp(90px, 20vw, 120px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .logo-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .brand-name {
+                letter-spacing: 1px;
+            }
+
+            .tech-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .logo-variant {
+                aspect-ratio: 1;
+                padding: clamp(20px, 4vw, 25px);
+            }
+
+            .variant-svg {
+                max-width: clamp(100px, 30vw, 140px);
+                max-height: clamp(80px, 25vw, 110px);
+            }
+        }
+
+        /* Mejoras de accesibilidad */
         @media (prefers-reduced-motion: reduce) {
             .particles .particle,
             .logo-showcase::before {
