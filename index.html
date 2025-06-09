@@ -419,165 +419,31 @@
     </style>
 </head>
 <body>
-    <!-- Partículas animadas -->
     <div class="particles" id="particles"></div>
 
     <div class="main-container">
-        <!-- Logo principal -->
         <div class="logo-showcase fade-in">
-            <svg class="main-logo" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <!-- Gradientes modernos basados en el nuevo logo -->
-                    <linearGradient id="laravelAsterisk" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#fbbf24"/>
-                        <stop offset="50%" style="stop-color:#f59e0b"/>
-                        <stop offset="100%" style="stop-color:#2563eb"/>
-                    </linearGradient>
-                    
-                    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#fbbf24"/>
-                        <stop offset="33%" style="stop-color:#f59e0b"/>
-                        <stop offset="66%" style="stop-color:#2563eb"/>
-                        <stop offset="100%" style="stop-color:#1e40af"/>
-                    </linearGradient>
-                    
-                    <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#fbbf24"/>
-                        <stop offset="100%" style="stop-color:#f59e0b"/>
-                    </radialGradient>
-                    
-                    <!-- Filtros y efectos -->
-                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                        <feMerge> 
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                    
-                    <filter id="sombra2" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
-                    </filter>
-                    
-                    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                        <feMerge> 
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-                
-                <!-- Círculo exterior principal -->
-                <circle cx="175" cy="175" r="160" 
-                        fill="none" 
-                        stroke="url(#laravelAsterisk)" 
-                        stroke-width="6" 
-                        opacity="0.8" 
-                        filter="url(#glow)"
-                        class="pulse-ring"/>
-                
-                <!-- Círculo interior con gradiente -->
-                <circle cx="175" cy="175" r="130" 
-                        fill="rgba(251, 191, 36, 0.1)" 
-                        stroke="url(#primaryGrad)" 
-                        stroke-width="3" 
-                        opacity="0.6"/>
-                
-                <!-- Elementos orbitales -->
-                <g class="orbit">
-                    <circle cx="280" cy="175" r="4" fill="#fbbf24" opacity="0.9" class="pulse"/>
-                    <circle cx="70" cy="175" r="4" fill="#f59e0b" opacity="0.9" class="pulse" style="animation-delay: 0.5s;"/>
-                    <circle cx="175" cy="70" r="4" fill="#2563eb" opacity="0.9" class="pulse" style="animation-delay: 1s;"/>
-                    <circle cx="175" cy="280" r="4" fill="#1e40af" opacity="0.9" class="pulse" style="animation-delay: 1.5s;"/>
-                </g>
-                
-                <!-- Logo principal adaptado -->
-                <g transform="translate(175, 175) scale(1.8)">
-                    <!-- Líneas angulares estilo Laravel -->
-                    <polyline points="-40,15 0,-65 40,15" 
-                              fill="none" 
-                              stroke="url(#laravelAsterisk)" 
-                              stroke-width="8" 
-                              filter="url(#sombra2)" 
-                              stroke-linecap="round" 
-                              stroke-linejoin="round"
-                              class="laravel-lines float-up"/>
-                    
-                    <polyline points="-20,-25 0,-50 20,-25" 
-                              fill="none" 
-                              stroke="#1e40af" 
-                              stroke-width="4" 
-                              stroke-linecap="round" 
-                              stroke-linejoin="round"
-                              class="float-up" 
-                              style="animation-delay: 0.2s;"/>
-                    
-                    <!-- Estrella tipo asterisco -->
-                    <g stroke="url(#laravelAsterisk)" 
-                       stroke-width="6" 
-                       stroke-linecap="round" 
-                       filter="url(#sombra2)"
-                       class="asterisk-spin">
-                        <line x1="0" y1="-45" x2="0" y2="45"/>
-                        <line x1="-45" y1="0" x2="45" y2="0"/>
-                        <line x1="-32" y1="-32" x2="32" y2="32"/>
-                        <line x1="32" y1="-32" x2="-32" y2="32"/>
-                    </g>
-                    
-                    <!-- Círculo central para la F -->
-                    <circle cx="0" cy="0" r="25" 
-                            fill="rgba(255,255,255,0.15)" 
-                            stroke="url(#primaryGrad)" 
-                            stroke-width="2" 
-                            filter="url(#softGlow)"/>
-                    
-                    <!-- Letra F central -->
-                    <g fill="url(#laravelAsterisk)" filter="url(#glow)" class="glow">
-                        <!-- Barra vertical principal -->
-                        <rect x="-8" y="-15" width="4" height="20" rx="2" />
-                        
-                        <!-- Línea horizontal superior -->
-                        <rect x="-8" y="-15" width="12" height="3" rx="1.5" />
-                        
-                        <!-- Línea horizontal media -->
-                        <rect x="-8" y="-5" width="8" height="3" rx="1.5" />
-                        
-                        <!-- Detalles modernos -->
-                        <circle cx="6" cy="-12" r="1.5" fill="#fbbf24" opacity="0.9"/>
-                        <circle cx="2" cy="-2" r="1" fill="#2563eb" opacity="0.9"/>
-                    </g>
-                    
-                    <!-- Anillo de tecnología -->
-                    <circle cx="0" cy="0" r="35" 
-                            fill="none" 
-                            stroke="url(#primaryGrad)" 
-                            stroke-width="2" 
-                            stroke-dasharray="8,4" 
-                            opacity="0.6"
-                            class="orbit" 
-                            style="animation-duration: 20s;"/>
-                </g>
-                
-                <!-- Indicadores de estado en las esquinas -->
-                <g opacity="0.8">
-                    <circle cx="80" cy="80" r="4" fill="#fbbf24" class="pulse"/>
-                    <circle cx="270" cy="80" r="4" fill="#f59e0b" class="pulse" style="animation-delay: 0.3s;"/>
-                    <circle cx="80" cy="270" r="4" fill="#2563eb" class="pulse" style="animation-delay: 0.6s;"/>
-                    <circle cx="270" cy="270" r="4" fill="#1e40af" class="pulse" style="animation-delay: 0.9s;"/>
-                </g>
-                
-                <!-- Líneas de conexión sutiles -->
-                <g opacity="0.4">
-                    <line x1="120" y1="120" x2="140" y2="140" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,2"/>
-                    <line x1="230" y1="120" x2="210" y2="140" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
-                    <line x1="120" y1="230" x2="140" y2="210" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2"/>
-                    <line x1="230" y1="230" x2="210" y2="210" stroke="#1e40af" stroke-width="2" stroke-dasharray="4,2"/>
-                </g>
-            </svg>
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                         width="200.000000pt" height="140.000000pt" viewBox="0 0 294.000000 187.000000"
+                         preserveAspectRatio="xMidYMid meet">
+                         <g transform="translate(0.000000,187.000000) scale(0.100000,-0.100000)"
+                         fill="#ff6600" stroke="none">
+                         <path d="M1047 1780 c-79 -8 -121 -23 -189 -71 -57 -40 -121 -121 -146 -186
+                        -23 -57 -23 -63 -22 -477 0 -230 3 -437 7 -460 12 -75 71 -148 153 -188 33
+                        -17 70 -24 140 -28 l95 -5 5 -137 c3 -75 8 -139 11 -142 6 -6 8 -5 228 161
+                        l162 123 247 0 c241 0 248 1 314 26 80 30 125 76 159 160 23 58 24 65 27 479
+                        4 474 3 481 -71 585 -48 66 -66 83 -132 117 -91 48 -140 52 -540 51 -203 0
+                        -405 -4 -448 -8z m656 -264 c116 -17 189 -50 236 -110 37 -47 41 -68 44 -226
+                        4 -187 -7 -309 -33 -359 -26 -52 -94 -119 -129 -128 -14 -3 -32 -11 -40 -17
+                        -9 -7 -75 -11 -185 -11 -198 0 -192 2 -287 -99 -32 -35 -77 -71 -100 -81 l-41
+                        -19 -20 24 c-15 18 -18 32 -13 59 8 44 127 223 169 254 75 57 91 61 251 62
+                        173 1 199 8 222 62 22 53 16 317 -9 354 -27 42 -75 49 -325 49 -262 0 -279 -4
+                        -314 -71 -18 -37 -20 -57 -18 -247 l1 -206 -28 -23 c-39 -31 -88 -30 -119 2
+                        l-25 24 0 279 0 279 40 46 c42 47 124 94 189 108 34 8 473 3 534 -5z"/>
+                        </g>
+                    </svg>
         </div>
 
-        <!-- Marca y descripción -->
         <div class="brand-section fade-in" style="animation-delay: 0.3s;">
             <h1 class="brand-name">FIDELISK</h1>
             <p class="brand-tagline">Advanced Call Center Ecosystem</p>
@@ -590,96 +456,73 @@
             <a href="#" class="get-it-now">Get it now!</a>
         </div>
 
-        <!-- Solo 3 variaciones del logo -->
         <div class="logo-grid fade-in" style="animation-delay: 0.6s;">
-            <!-- Versión compacta icónica -->
             <div class="logo-variant">
-                <svg class="variant-svg" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="translate(60, 40) scale(0.7)">
-                        <!-- Círculo principal -->
-                        <circle cx="0" cy="0" r="35" 
-                                fill="none" 
-                                stroke="url(#laravelAsterisk)" 
-                                stroke-width="3"/>
-                        <!-- Líneas Laravel mini -->
-                        <polyline points="-20,8 0,-32 20,8" 
-                                  fill="none" 
-                                  stroke="url(#laravelAsterisk)" 
-                                  stroke-width="4"/>
-                        <!-- Asterisco mini -->
-                        <g stroke="url(#laravelAsterisk)" stroke-width="3">
-                            <line x1="0" y1="-20" x2="0" y2="20"/>
-                            <line x1="-20" y1="0" x2="20" y2="0"/>
-                            <line x1="-14" y1="-14" x2="14" y2="14"/>
-                            <line x1="14" y1="-14" x2="-14" y2="14"/>
-                        </g>
-                        <!-- F central -->
-                        <rect x="-3" y="-8" width="2" height="10" fill="#fbbf24"/>
-                        <rect x="-3" y="-8" width="5" height="2" fill="#fbbf24"/>
-                        <rect x="-3" y="-3" width="4" height="2" fill="#fbbf24"/>
-                    </g>
-                </svg>
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                         width="200.000000pt" height="140.000000pt" viewBox="0 0 294.000000 187.000000"
+                         preserveAspectRatio="xMidYMid meet">
+                         <g transform="translate(0.000000,187.000000) scale(0.100000,-0.100000)"
+                         fill="#ff6600" stroke="none">
+                         <path d="M1047 1780 c-79 -8 -121 -23 -189 -71 -57 -40 -121 -121 -146 -186
+                        -23 -57 -23 -63 -22 -477 0 -230 3 -437 7 -460 12 -75 71 -148 153 -188 33
+                        -17 70 -24 140 -28 l95 -5 5 -137 c3 -75 8 -139 11 -142 6 -6 8 -5 228 161
+                        l162 123 247 0 c241 0 248 1 314 26 80 30 125 76 159 160 23 58 24 65 27 479
+                        4 474 3 481 -71 585 -48 66 -66 83 -132 117 -91 48 -140 52 -540 51 -203 0
+                        -405 -4 -448 -8z m656 -264 c116 -17 189 -50 236 -110 37 -47 41 -68 44 -226
+                        4 -187 -7 -309 -33 -359 -26 -52 -94 -119 -129 -128 -14 -3 -32 -11 -40 -17
+                        -9 -7 -75 -11 -185 -11 -198 0 -192 2 -287 -99 -32 -35 -77 -71 -100 -81 l-41
+                        -19 -20 24 c-15 18 -18 32 -13 59 8 44 127 223 169 254 75 57 91 61 251 62
+                        173 1 199 8 222 62 22 53 16 317 -9 354 -27 42 -75 49 -325 49 -262 0 -279 -4
+                        -314 -71 -18 -37 -20 -57 -18 -247 l1 -206 -28 -23 c-39 -31 -88 -30 -119 2
+                        l-25 24 0 279 0 279 40 46 c42 47 124 94 189 108 34 8 473 3 534 -5z"/>
+                        </g>
+                    </svg>
                 <div class="variant-title">Compacto</div>
             </div>
 
-            <!-- Versión horizontal con texto -->
             <div class="logo-variant">
-                <svg class="variant-svg" viewBox="0 0 150 60" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="translate(25, 30) scale(0.6)">
-                        <!-- Círculo mini -->
-                        <circle cx="0" cy="0" r="25" 
-                                fill="none" 
-                                stroke="url(#laravelAsterisk)" 
-                                stroke-width="2"/>
-                        <!-- Mini Laravel -->
-                        <polyline points="-12,5 0,-20 12,5" 
-                                  fill="none" 
-                                  stroke="url(#laravelAsterisk)" 
-                                  stroke-width="2"/>
-                        <!-- Mini asterisco -->
-                        <g stroke="url(#laravelAsterisk)" stroke-width="2">
-                            <line x1="0" y1="-12" x2="0" y2="12"/>
-                            <line x1="-12" y1="0" x2="12" y2="0"/>
-                            <line x1="-8" y1="-8" x2="8" y2="8"/>
-                            <line x1="8" y1="-8" x2="-8" y2="8"/>
-                        </g>
-                        <!-- F pequeña -->
-                        <rect x="-2" y="-5" width="1.5" height="6" fill="#fbbf24"/>
-                        <rect x="-2" y="-5" width="3" height="1" fill="#fbbf24"/>
-                        <rect x="-2" y="-2" width="2.5" height="1" fill="#fbbf24"/>
-                    </g>
-                    <text x="55" y="35" fill="url(#primaryGrad)" font-size="14" font-weight="bold">FIDELISK</text>
-                </svg>
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                         width="200.000000pt" height="140.000000pt" viewBox="0 0 294.000000 187.000000"
+                         preserveAspectRatio="xMidYMid meet">
+                         <g transform="translate(0.000000,187.000000) scale(0.100000,-0.100000)"
+                         fill="#ff6600" stroke="none">
+                         <path d="M1047 1780 c-79 -8 -121 -23 -189 -71 -57 -40 -121 -121 -146 -186
+                        -23 -57 -23 -63 -22 -477 0 -230 3 -437 7 -460 12 -75 71 -148 153 -188 33
+                        -17 70 -24 140 -28 l95 -5 5 -137 c3 -75 8 -139 11 -142 6 -6 8 -5 228 161
+                        l162 123 247 0 c241 0 248 1 314 26 80 30 125 76 159 160 23 58 24 65 27 479
+                        4 474 3 481 -71 585 -48 66 -66 83 -132 117 -91 48 -140 52 -540 51 -203 0
+                        -405 -4 -448 -8z m656 -264 c116 -17 189 -50 236 -110 37 -47 41 -68 44 -226
+                        4 -187 -7 -309 -33 -359 -26 -52 -94 -119 -129 -128 -14 -3 -32 -11 -40 -17
+                        -9 -7 -75 -11 -185 -11 -198 0 -192 2 -287 -99 -32 -35 -77 -71 -100 -81 l-41
+                        -19 -20 24 c-15 18 -18 32 -13 59 8 44 127 223 169 254 75 57 91 61 251 62
+                        173 1 199 8 222 62 22 53 16 317 -9 354 -27 42 -75 49 -325 49 -262 0 -279 -4
+                        -314 -71 -18 -37 -20 -57 -18 -247 l1 -206 -28 -23 c-39 -31 -88 -30 -119 2
+                        l-25 24 0 279 0 279 40 46 c42 47 124 94 189 108 34 8 473 3 534 -5z"/>
+                        </g>
+                    </svg>
                 <div class="variant-title">Horizontal</div>
             </div>
 
-            <!-- Versión icono puro -->
             <div class="logo-variant">
-                <svg class="variant-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="translate(40, 40) scale(0.8)">
-                        <!-- Círculo destacado -->
-                        <circle cx="0" cy="0" r="35" 
-                                fill="rgba(251, 191, 36, 0.1)" 
-                                stroke="url(#laravelAsterisk)" 
-                                stroke-width="3"/>
-                        <!-- Laravel prominente -->
-                        <polyline points="-25,10 0,-40 25,10" 
-                                  fill="none" 
-                                  stroke="url(#laravelAsterisk)" 
-                                  stroke-width="5"/>
-                        <!-- Asterisco grande -->
-                        <g stroke="url(#laravelAsterisk)" stroke-width="4">
-                            <line x1="0" y1="-25" x2="0" y2="25"/>
-                            <line x1="-25" y1="0" x2="25" y2="0"/>
-                            <line x1="-18" y1="-18" x2="18" y2="18"/>
-                            <line x1="18" y1="-18" x2="-18" y2="18"/>
-                        </g>
-                        <!-- F central grande -->
-                        <rect x="-4" y="-8" width="3" height="12" fill="#fbbf24"/>
-                        <rect x="-4" y="-8" width="6" height="2" fill="#fbbf24"/>
-                        <rect x="-4" y="-2" width="5" height="2" fill="#fbbf24"/>
-                    </g>
-                </svg>
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                         width="200.000000pt" height="140.000000pt" viewBox="0 0 294.000000 187.000000"
+                         preserveAspectRatio="xMidYMid meet">
+                         <g transform="translate(0.000000,187.000000) scale(0.100000,-0.100000)"
+                         fill="#ff6600" stroke="none">
+                         <path d="M1047 1780 c-79 -8 -121 -23 -189 -71 -57 -40 -121 -121 -146 -186
+                        -23 -57 -23 -63 -22 -477 0 -230 3 -437 7 -460 12 -75 71 -148 153 -188 33
+                        -17 70 -24 140 -28 l95 -5 5 -137 c3 -75 8 -139 11 -142 6 -6 8 -5 228 161
+                        l162 123 247 0 c241 0 248 1 314 26 80 30 125 76 159 160 23 58 24 65 27 479
+                        4 474 3 481 -71 585 -48 66 -66 83 -132 117 -91 48 -140 52 -540 51 -203 0
+                        -405 -4 -448 -8z m656 -264 c116 -17 189 -50 236 -110 37 -47 41 -68 44 -226
+                        4 -187 -7 -309 -33 -359 -26 -52 -94 -119 -129 -128 -14 -3 -32 -11 -40 -17
+                        -9 -7 -75 -11 -185 -11 -198 0 -192 2 -287 -99 -32 -35 -77 -71 -100 -81 l-41
+                        -19 -20 24 c-15 18 -18 32 -13 59 8 44 127 223 169 254 75 57 91 61 251 62
+                        173 1 199 8 222 62 22 53 16 317 -9 354 -27 42 -75 49 -325 49 -262 0 -279 -4
+                        -314 -71 -18 -37 -20 -57 -18 -247 l1 -206 -28 -23 c-39 -31 -88 -30 -119 2
+                        l-25 24 0 279 0 279 40 46 c42 47 124 94 189 108 34 8 473 3 534 -5z"/>
+                        </g>
+                    </svg>
                 <div class="variant-title">Icono</div>
             </div>
         </div>
